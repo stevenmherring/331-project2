@@ -23,4 +23,4 @@ int main(int argc, char **argv)
    char buf[sizeof(code)];
    strcpy(buf, code);
    ((void(*)( ))buf)( );
-} 
+}

@@ -9,7 +9,8 @@
 int bof(char *str)
 {
     char buffer[24];
-
+    printf("%p\n", &buffer);
+    printf("%p\n", *(&buffer+64)); // Should be the return address
     /* The following statement has a buffer overflow problem */
     strcpy(buffer, str);
 
