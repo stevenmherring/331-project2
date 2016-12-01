@@ -9,10 +9,9 @@ call_shellcode:
 	gcc -z execstack -o bin/call_shellcode src/call_shellcode.c
 
 stack:
-	@echo "\nTYPE IN ROOT PASSWORD (seedubuntu) then PRESS CTRL-D\n"
-	su root
-	gcc -o bin/stack -z execstack -fno-stack-protector src/stack.c
-	chmod 4755 bin/stack
+	sudo gcc -o bin/stack -z execstack -fno-stack-protector -g -o bin/stackdebug src/stack.c
+	sudo chmod 4755 bin/stack
+	sudo chmod 4755 bin/stackdebug
 	@exit
 
 exploit:
